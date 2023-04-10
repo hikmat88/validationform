@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>switch</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center" >
+            <div class="col-md-5 p-3 shadow">
+                <p class="mb-2"></p>
+                <div class="mb-3">
+                    <label for="firstNum">First Number</label>
+                    <input type="number" name="firstNum" id="firstNum" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="secondNum">Second Number</label>
+                    <input type="number" name="secondNum" id="secondNum" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="operator">Chose operator</label>
+                    <select name="operator" id="operator" class="form-control">
+                        <option value="+">Addition</option>
+                        <option value="-">Subtraction</option>
+                        <option value="*">Multiplex</option>
+                        <option value="/">Division</option>
+                        <option value="%">Reminder</option>
+                        
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" onclick="execute()">Show Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const execute=()=>{
+            const x=parseFloat(document.getElementById('firstNum').value)
+            const y=parseFloat(document.getElementById('secondNum').value)
+            const operator =document.getElementById('operator').value
+
+            switch(operator){
+                case '+':
+                    const a=x+y
+                    document.querySelector('p').innerHTML=`The number is ${a}`
+                    break
+                case '-':
+                    const b=x-y
+                    document.querySelector('p').innerHTML=`The subtraction is ${b}`
+                    break
+                case '*':
+                    const c=x*y
+                    document.querySelector('p').innerHTML=`The multiplication is ${c}`
+                    break
+                case '/':
+                    const d=x/y
+                    document.querySelector('p').innerHTML=`The division is ${c}`
+                    break
+            }
+        }
+
+    </script>
+</body>
+</html>
